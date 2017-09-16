@@ -6,24 +6,12 @@ using System.Threading.Tasks;
 
 namespace Bookstore.Classes
 {
-    public class Book
+    public class Book : BookStoreItem
     {
-        private string title;
-        public string Title
-        {
-            get { return this.title; }
-        }
-
         private string author;
         public string Author
         {
             get { return this.author; }
-        }
-
-        private decimal cost;
-        public decimal Cost
-        {
-            get { return this.cost; }
         }
 
         private int pageCount;
@@ -32,11 +20,9 @@ namespace Bookstore.Classes
             get { return this.pageCount; }
         }
 
-        public Book(string title, string author, decimal cost, int pageCount)
+        public Book(string title, string author, decimal cost, int pageCount) : base(title, cost)
         {
-            this.title = title;
             this.author = author;
-            this.cost = cost;
             this.pageCount = pageCount;
         }
 

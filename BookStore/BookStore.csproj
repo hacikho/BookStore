@@ -42,7 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\AudioBook.cs" />
     <Compile Include="Classes\Book.cs" />
+    <Compile Include="Classes\BookStoreItem.cs" />
+    <Compile Include="Classes\Movie.cs" />
     <Compile Include="Classes\ShoppingCart.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

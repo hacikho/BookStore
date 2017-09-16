@@ -8,11 +8,23 @@ namespace Bookstore.Classes
 {
     public class ShoppingCart
     {
-        private List<Book> cartItems = new List<Book>();
+        private List<Book> bookItems = new List<Book>();
+        private List<Movie> movieItems = new List<Movie>();
+        private List<AudioBook> audioBookItems = new List<AudioBook>();
 
-        public Book[] CartItems
+        public Book[] BookItems
         {
-            get { return cartItems.ToArray(); }
+            get { return this.bookItems.ToArray(); }
+        }
+
+        public Movie[] MovieItems
+        {
+            get { return this.movieItems.ToArray(); }
+        }
+
+        public AudioBook[] AudioBookItem
+        {
+            get { return this.audioBookItems.ToArray(); }
         }
 
         public decimal GrandTotal
@@ -20,7 +32,17 @@ namespace Bookstore.Classes
             get
             {
                 decimal total = 0.0M;
-                foreach(Book item in cartItems)
+                foreach(Book item in bookItems)
+                {
+                    total += item.Cost;
+                }
+
+                foreach(Movie item in this.movieItems)
+                {
+                    total += item.Cost;
+                }
+
+                foreach(AudioBook item in this.audioBookItems)
                 {
                     total += item.Cost;
                 }
@@ -30,7 +52,17 @@ namespace Bookstore.Classes
 
         public void AddToCart(Book bookToPurchase)
         {
-            cartItems.Add(bookToPurchase);
+            bookItems.Add(bookToPurchase);
+        }
+
+        public void AddToCart(Movie movieToPurchase)
+        {
+            movieItems.Add(movieToPurchase);
+        }
+
+        public void AddToCart(AudioBook audioBookToPurchase)
+        {
+            audioBookItems.Add(audioBookToPurchase);
         }
     }
 }
